@@ -1,0 +1,15 @@
+module led_blink (
+	input logic_clk,
+	output logic led = 0
+);
+
+	logic [25:0] counter = 0;
+	
+	always_ff @(poseedge clk) begin
+		counter <= counter + 1'b1;
+		if ( counter == 50_000_000) begin
+			counter <= '0;
+			led <= ~led;
+		end
+	end
+endmodule

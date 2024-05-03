@@ -1,0 +1,11 @@
+module switched_to_LEDs
+
+	#( parameter N = 4 )
+	
+	(input [N-1:0] i_switch,
+	 output [N-1:0] p_LED
+	);
+	
+	assign o_LED = i_switch ; 
+
+endmodule

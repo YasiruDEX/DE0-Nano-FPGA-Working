@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at led_blink.sv(11): always construct contains both blocking and non-blocking assignments File: E:/Github-ex/DE0-Nano-FPGA-Working/LED_configure/led_blink.sv Line: 11
