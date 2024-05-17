@@ -1,0 +1,116 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dE:/Downloads Firefox/UART_232/UART_232/sim
+vbaudrate
+Z0 !s110 1715141648
+!i10b 1
+!s100 jOBL5CQO3X6fT_`fCZ>bk1
+IKb_K7TncXC=N@nY:D2@M;3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/yasir/Downloads/Uart_testbench
+w1714653726
+8C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/baudrate.v
+FC:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/baudrate.v
+L0 4
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1715141647.000000
+!s107 C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/baudrate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/baudrate.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vreceiver
+Z7 !s110 1715141647
+!i10b 1
+!s100 9iXRO]FRo[IjE0@OkemK^3
+ILF[Keo2TF6Nl<UCYB6P=H1
+R1
+R2
+w1715110671
+8C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/receiver.v
+FC:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/receiver.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/receiver.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/receiver.v|
+!i113 1
+R5
+R6
+vtransmitter
+R7
+!i10b 1
+!s100 HHMf3JM>WU`6O:n:45K;N3
+IO;oK:W49;42CIIz4?[m`53
+R1
+R2
+w1715110239
+8C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/transmitter.v
+FC:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/transmitter.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/transmitter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/transmitter.v|
+!i113 1
+R5
+R6
+vuart
+R0
+!i10b 1
+!s100 IMLoi@TIOF0eCj@4BJl?32
+IfDa5hJB6<YoN2UK9H^7Z:3
+R1
+R2
+w1714653722
+8C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/uart.v
+FC:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/uart.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1715141648.000000
+!s107 C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/uart.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/uart.v|
+!i113 1
+R5
+R6
+vuart_TB
+R7
+!i10b 1
+!s100 Fj_]U?A3CO5zL>>jm<BM21
+Ik1D0Rb0Y^0aBA6^8DKN8@0
+R1
+R2
+w1715141644
+8C:\Users\yasir\Downloads\FPGA\fpga_1 - Copy\uart_TB.v
+FC:\Users\yasir\Downloads\FPGA\fpga_1 - Copy\uart_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:\Users\yasir\Downloads\FPGA\fpga_1 - Copy\uart_TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\yasir\Downloads\FPGA\fpga_1 - Copy\uart_TB.v|
+!i113 1
+R5
+R6
+nuart_@t@b

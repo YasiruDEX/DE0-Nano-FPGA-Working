@@ -1,0 +1,36 @@
+{C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/baudrate.v} {1 {vlog -work work -stats=none {C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/baudrate.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module baudrate
+
+Top level modules:
+	baudrate
+
+} {} {}} {C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/uart.v} {1 {vlog -work work -stats=none {C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/uart.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module uart
+
+Top level modules:
+	uart
+
+} {} {}} {C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/uart_TB.v} {1 {vlog -work work -stats=none {C:\Users\yasir\Downloads\FPGA\fpga_1 - Copy\uart_TB.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module uart_TB
+
+Top level modules:
+	uart_TB
+
+} {} {}} {C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/transmitter.v} {1 {vlog -work work -stats=none {C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/transmitter.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module transmitter
+
+Top level modules:
+	transmitter
+
+} {} {}} {C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/receiver.v} {1 {vlog -work work -stats=none {C:/Users/yasir/Downloads/FPGA/fpga_1 - Copy/receiver.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module receiver
+
+Top level modules:
+	receiver
+
+} {} {}}
