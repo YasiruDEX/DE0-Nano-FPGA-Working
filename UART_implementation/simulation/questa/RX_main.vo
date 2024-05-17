@@ -1,0 +1,3450 @@
+// Copyright (C) 2023  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition"
+
+// DATE "05/07/2024 20:26:55"
+
+// 
+// Device: Altera EP4CE22F17C6 Package FBGA256
+// 
+
+// 
+// This Verilog file should be used for Questa Intel FPGA (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module TOP (
+	Clk,
+	Rst_n,
+	Rx,
+	Tx,
+	RxData);
+input 	Clk;
+input 	Rst_n;
+input 	Rx;
+output 	Tx;
+output 	[7:0] RxData;
+
+// Design Ports Information
+// Tx	=>  Location: PIN_D3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RxData[0]	=>  Location: PIN_L3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RxData[1]	=>  Location: PIN_B1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RxData[2]	=>  Location: PIN_F3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RxData[3]	=>  Location: PIN_D1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RxData[4]	=>  Location: PIN_A11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RxData[5]	=>  Location: PIN_B13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RxData[6]	=>  Location: PIN_A13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// RxData[7]	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Clk	=>  Location: PIN_R8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Rst_n	=>  Location: PIN_E1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// Rx	=>  Location: PIN_C3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \Tx~output_o ;
+wire \RxData[0]~output_o ;
+wire \RxData[1]~output_o ;
+wire \RxData[2]~output_o ;
+wire \RxData[3]~output_o ;
+wire \RxData[4]~output_o ;
+wire \RxData[5]~output_o ;
+wire \RxData[6]~output_o ;
+wire \RxData[7]~output_o ;
+wire \Clk~input_o ;
+wire \Clk~inputclkctrl_outclk ;
+wire \I_BAUDGEN|baudRateReg[0]~16_combout ;
+wire \I_BAUDGEN|baudRateReg[0]~feeder_combout ;
+wire \~GND~combout ;
+wire \Rst_n~input_o ;
+wire \Rst_n~inputclkctrl_outclk ;
+wire \I_BAUDGEN|baudRateReg[0]~17 ;
+wire \I_BAUDGEN|baudRateReg[1]~18_combout ;
+wire \I_BAUDGEN|baudRateReg[1]~feeder_combout ;
+wire \I_BAUDGEN|baudRateReg[1]~19 ;
+wire \I_BAUDGEN|baudRateReg[2]~20_combout ;
+wire \I_BAUDGEN|baudRateReg[2]~21 ;
+wire \I_BAUDGEN|baudRateReg[3]~22_combout ;
+wire \I_BAUDGEN|baudRateReg[3]~23 ;
+wire \I_BAUDGEN|baudRateReg[4]~24_combout ;
+wire \I_BAUDGEN|baudRateReg[4]~25 ;
+wire \I_BAUDGEN|baudRateReg[5]~26_combout ;
+wire \I_BAUDGEN|baudRateReg[5]~27 ;
+wire \I_BAUDGEN|baudRateReg[6]~28_combout ;
+wire \I_BAUDGEN|baudRateReg[6]~29 ;
+wire \I_BAUDGEN|baudRateReg[7]~30_combout ;
+wire \I_BAUDGEN|baudRateReg[7]~31 ;
+wire \I_BAUDGEN|baudRateReg[8]~32_combout ;
+wire \I_BAUDGEN|baudRateReg[8]~33 ;
+wire \I_BAUDGEN|baudRateReg[9]~34_combout ;
+wire \I_BAUDGEN|baudRateReg[9]~35 ;
+wire \I_BAUDGEN|baudRateReg[10]~36_combout ;
+wire \I_BAUDGEN|baudRateReg[10]~37 ;
+wire \I_BAUDGEN|baudRateReg[11]~38_combout ;
+wire \I_BAUDGEN|Equal0~2_combout ;
+wire \I_BAUDGEN|baudRateReg[11]~39 ;
+wire \I_BAUDGEN|baudRateReg[12]~40_combout ;
+wire \I_BAUDGEN|baudRateReg[12]~41 ;
+wire \I_BAUDGEN|baudRateReg[13]~42_combout ;
+wire \I_BAUDGEN|baudRateReg[13]~43 ;
+wire \I_BAUDGEN|baudRateReg[14]~44_combout ;
+wire \I_BAUDGEN|baudRateReg[14]~45 ;
+wire \I_BAUDGEN|baudRateReg[15]~46_combout ;
+wire \I_BAUDGEN|Equal0~3_combout ;
+wire \I_BAUDGEN|Equal0~0_combout ;
+wire \I_BAUDGEN|Equal0~1_combout ;
+wire \I_BAUDGEN|Equal0~combout ;
+wire \I_BAUDGEN|Equal0~clkctrl_outclk ;
+wire \I_RS232TX|counter[0]~3_combout ;
+wire \I_RS232TX|R_edge[0]~feeder_combout ;
+wire \I_RS232TX|R_edge[1]~feeder_combout ;
+wire \I_RS232TX|D_edge~combout ;
+wire \I_RS232TX|Add1~0_combout ;
+wire \I_RS232TX|start_bit~0_combout ;
+wire \I_RS232TX|start_bit~q ;
+wire \I_RS232TX|LessThan0~1_combout ;
+wire \I_RS232TX|always3~3_combout ;
+wire \I_RS232TX|Bit[4]~0_combout ;
+wire \I_RS232TX|Add1~1 ;
+wire \I_RS232TX|Add1~2_combout ;
+wire \I_RS232TX|Add1~3 ;
+wire \I_RS232TX|Add1~4_combout ;
+wire \I_RS232TX|Add1~5 ;
+wire \I_RS232TX|Add1~6_combout ;
+wire \I_RS232TX|Bit[3]~1_combout ;
+wire \I_RS232TX|Add1~7 ;
+wire \I_RS232TX|Add1~8_combout ;
+wire \I_RS232TX|LessThan0~0_combout ;
+wire \I_RS232TX|always3~4_combout ;
+wire \I_RS232TX|TxDone~0_combout ;
+wire \I_RS232TX|TxDone~q ;
+wire \I_RS232TX|TxDone~_wirecell_combout ;
+wire \I_RS232TX|State~q ;
+wire \I_RS232TX|counter~2_combout ;
+wire \I_RS232TX|Add0~1_combout ;
+wire \I_RS232TX|always3~5_combout ;
+wire \I_RS232TX|counter~1_combout ;
+wire \I_RS232TX|Add0~0_combout ;
+wire \I_RS232TX|counter~0_combout ;
+wire \I_RS232TX|Equal1~0_combout ;
+wire \I_RS232TX|stop_bit~0_combout ;
+wire \I_RS232TX|stop_bit~q ;
+wire \Rx~input_o ;
+wire \I_RS232RX|Read_data[7]~feeder_combout ;
+wire \I_RS232RX|counter~4_combout ;
+wire \I_RS232RX|Add1~0_combout ;
+wire \I_RS232RX|Add0~0_combout ;
+wire \I_RS232RX|always3~3_combout ;
+wire \I_RS232RX|counter~0_combout ;
+wire \I_RS232RX|counter~1_combout ;
+wire \I_RS232RX|start_bit~0_combout ;
+wire \I_RS232RX|start_bit~q ;
+wire \I_RS232RX|Bit[0]~0_combout ;
+wire \I_RS232RX|Bit[0]~1_combout ;
+wire \I_RS232RX|Bit[0]~3_combout ;
+wire \I_RS232RX|Add1~1 ;
+wire \I_RS232RX|Add1~2_combout ;
+wire \I_RS232RX|Add1~3 ;
+wire \I_RS232RX|Add1~4_combout ;
+wire \I_RS232RX|Add1~5 ;
+wire \I_RS232RX|Add1~6_combout ;
+wire \I_RS232RX|Bit[3]~2_combout ;
+wire \I_RS232RX|always3~4_combout ;
+wire \I_RS232RX|always3~5_combout ;
+wire \I_RS232RX|RxDone~feeder_combout ;
+wire \I_RS232RX|RxDone~q ;
+wire \I_RS232RX|Next.READ~0_combout ;
+wire \I_RS232RX|State.READ~feeder_combout ;
+wire \I_RS232RX|State.READ~q ;
+wire \I_RS232RX|counter~2_combout ;
+wire \I_RS232RX|always3~2_combout ;
+wire \I_RS232RX|counter~3_combout ;
+wire \I_RS232RX|Add1~7 ;
+wire \I_RS232RX|Add1~8_combout ;
+wire \I_RS232RX|always3~0_combout ;
+wire \I_RS232RX|always3~1_combout ;
+wire \I_RS232RX|Read_data[0]~0_combout ;
+wire \I_RS232RX|RxData[2]~feeder_combout ;
+wire \I_RS232TX|in_data~2_combout ;
+wire \I_RS232RX|RxData[6]~feeder_combout ;
+wire \I_RS232RX|RxData[7]~feeder_combout ;
+wire \I_RS232TX|always3~2_combout ;
+wire \I_RS232TX|in_data~10_combout ;
+wire \I_RS232TX|in_data~9_combout ;
+wire \I_RS232TX|in_data[0]~11_combout ;
+wire \I_RS232RX|RxData[5]~feeder_combout ;
+wire \I_RS232TX|in_data~8_combout ;
+wire \I_RS232RX|RxData[4]~feeder_combout ;
+wire \I_RS232TX|in_data~7_combout ;
+wire \I_RS232RX|RxData[3]~feeder_combout ;
+wire \I_RS232TX|in_data~6_combout ;
+wire \I_RS232TX|in_data~5_combout ;
+wire \I_RS232RX|RxData[1]~feeder_combout ;
+wire \I_RS232TX|in_data~4_combout ;
+wire \I_RS232RX|RxData[0]~feeder_combout ;
+wire \I_RS232TX|in_data~3_combout ;
+wire \I_RS232TX|Tx~0_combout ;
+wire \I_RS232TX|Tx~1_combout ;
+wire \I_RS232TX|Tx~q ;
+wire [15:0] \I_BAUDGEN|baudRateReg ;
+wire [7:0] \I_RS232RX|RxData ;
+wire [7:0] \I_RS232RX|Read_data ;
+wire [7:0] \I_RS232TX|in_data ;
+wire [4:0] \I_RS232RX|Bit ;
+wire [3:0] \I_RS232TX|counter ;
+wire [4:0] \I_RS232TX|Bit ;
+wire [1:0] \I_RS232TX|R_edge ;
+wire [3:0] \I_RS232RX|counter ;
+
+
+hard_block auto_generated_inst(
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Location: IOOBUF_X1_Y34_N9
+cycloneive_io_obuf \Tx~output (
+	.i(\I_RS232TX|Tx~q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\Tx~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \Tx~output .bus_hold = "false";
+defparam \Tx~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y10_N23
+cycloneive_io_obuf \RxData[0]~output (
+	.i(\I_RS232RX|RxData [0]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\RxData[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \RxData[0]~output .bus_hold = "false";
+defparam \RxData[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y28_N9
+cycloneive_io_obuf \RxData[1]~output (
+	.i(\I_RS232RX|RxData [1]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\RxData[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \RxData[1]~output .bus_hold = "false";
+defparam \RxData[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y26_N16
+cycloneive_io_obuf \RxData[2]~output (
+	.i(\I_RS232RX|RxData [2]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\RxData[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \RxData[2]~output .bus_hold = "false";
+defparam \RxData[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X0_Y25_N9
+cycloneive_io_obuf \RxData[3]~output (
+	.i(\I_RS232RX|RxData [3]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\RxData[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \RxData[3]~output .bus_hold = "false";
+defparam \RxData[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X40_Y34_N2
+cycloneive_io_obuf \RxData[4]~output (
+	.i(\I_RS232RX|RxData [4]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\RxData[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \RxData[4]~output .bus_hold = "false";
+defparam \RxData[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X49_Y34_N9
+cycloneive_io_obuf \RxData[5]~output (
+	.i(\I_RS232RX|RxData [5]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\RxData[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \RxData[5]~output .bus_hold = "false";
+defparam \RxData[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X49_Y34_N2
+cycloneive_io_obuf \RxData[6]~output (
+	.i(\I_RS232RX|RxData [6]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\RxData[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \RxData[6]~output .bus_hold = "false";
+defparam \RxData[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X38_Y34_N16
+cycloneive_io_obuf \RxData[7]~output (
+	.i(\I_RS232RX|RxData [7]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\RxData[7]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \RxData[7]~output .bus_hold = "false";
+defparam \RxData[7]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X27_Y0_N22
+cycloneive_io_ibuf \Clk~input (
+	.i(Clk),
+	.ibar(gnd),
+	.o(\Clk~input_o ));
+// synopsys translate_off
+defparam \Clk~input .bus_hold = "false";
+defparam \Clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G18
+cycloneive_clkctrl \Clk~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\Clk~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\Clk~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \Clk~inputclkctrl .clock_type = "global clock";
+defparam \Clk~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N0
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[0]~16 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[0]~16_combout  = !\I_BAUDGEN|baudRateReg [0]
+// \I_BAUDGEN|baudRateReg[0]~17  = CARRY(!\I_BAUDGEN|baudRateReg [0])
+
+	.dataa(gnd),
+	.datab(\I_BAUDGEN|baudRateReg [0]),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\I_BAUDGEN|baudRateReg[0]~16_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[0]~17 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[0]~16 .lut_mask = 16'h3333;
+defparam \I_BAUDGEN|baudRateReg[0]~16 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X29_Y1_N16
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[0]~feeder (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[0]~feeder_combout  = \I_BAUDGEN|baudRateReg[0]~16_combout 
+
+	.dataa(\I_BAUDGEN|baudRateReg[0]~16_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\I_BAUDGEN|baudRateReg[0]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[0]~feeder .lut_mask = 16'hAAAA;
+defparam \I_BAUDGEN|baudRateReg[0]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X29_Y1_N22
+cycloneive_lcell_comb \~GND (
+// Equation(s):
+// \~GND~combout  = GND
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\~GND~combout ),
+	.cout());
+// synopsys translate_off
+defparam \~GND .lut_mask = 16'h0000;
+defparam \~GND .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y16_N8
+cycloneive_io_ibuf \Rst_n~input (
+	.i(Rst_n),
+	.ibar(gnd),
+	.o(\Rst_n~input_o ));
+// synopsys translate_off
+defparam \Rst_n~input .bus_hold = "false";
+defparam \Rst_n~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G2
+cycloneive_clkctrl \Rst_n~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\Rst_n~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\Rst_n~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \Rst_n~inputclkctrl .clock_type = "global clock";
+defparam \Rst_n~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: FF_X29_Y1_N17
+dffeas \I_BAUDGEN|baudRateReg[0] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_BAUDGEN|baudRateReg[0]~feeder_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[0] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N2
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[1]~18 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[1]~18_combout  = (\I_BAUDGEN|baudRateReg [1] & (!\I_BAUDGEN|baudRateReg[0]~17 )) # (!\I_BAUDGEN|baudRateReg [1] & ((\I_BAUDGEN|baudRateReg[0]~17 ) # (GND)))
+// \I_BAUDGEN|baudRateReg[1]~19  = CARRY((!\I_BAUDGEN|baudRateReg[0]~17 ) # (!\I_BAUDGEN|baudRateReg [1]))
+
+	.dataa(\I_BAUDGEN|baudRateReg [1]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[0]~17 ),
+	.combout(\I_BAUDGEN|baudRateReg[1]~18_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[1]~19 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[1]~18 .lut_mask = 16'h5A5F;
+defparam \I_BAUDGEN|baudRateReg[1]~18 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X29_Y1_N20
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[1]~feeder (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[1]~feeder_combout  = \I_BAUDGEN|baudRateReg[1]~18_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_BAUDGEN|baudRateReg[1]~18_combout ),
+	.cin(gnd),
+	.combout(\I_BAUDGEN|baudRateReg[1]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[1]~feeder .lut_mask = 16'hFF00;
+defparam \I_BAUDGEN|baudRateReg[1]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X29_Y1_N21
+dffeas \I_BAUDGEN|baudRateReg[1] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[1]~feeder_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[1] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N4
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[2]~20 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[2]~20_combout  = (\I_BAUDGEN|baudRateReg [2] & (\I_BAUDGEN|baudRateReg[1]~19  $ (GND))) # (!\I_BAUDGEN|baudRateReg [2] & (!\I_BAUDGEN|baudRateReg[1]~19  & VCC))
+// \I_BAUDGEN|baudRateReg[2]~21  = CARRY((\I_BAUDGEN|baudRateReg [2] & !\I_BAUDGEN|baudRateReg[1]~19 ))
+
+	.dataa(gnd),
+	.datab(\I_BAUDGEN|baudRateReg [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[1]~19 ),
+	.combout(\I_BAUDGEN|baudRateReg[2]~20_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[2]~21 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[2]~20 .lut_mask = 16'hC30C;
+defparam \I_BAUDGEN|baudRateReg[2]~20 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N5
+dffeas \I_BAUDGEN|baudRateReg[2] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[2]~20_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[2] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N6
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[3]~22 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[3]~22_combout  = (\I_BAUDGEN|baudRateReg [3] & (!\I_BAUDGEN|baudRateReg[2]~21 )) # (!\I_BAUDGEN|baudRateReg [3] & ((\I_BAUDGEN|baudRateReg[2]~21 ) # (GND)))
+// \I_BAUDGEN|baudRateReg[3]~23  = CARRY((!\I_BAUDGEN|baudRateReg[2]~21 ) # (!\I_BAUDGEN|baudRateReg [3]))
+
+	.dataa(\I_BAUDGEN|baudRateReg [3]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[2]~21 ),
+	.combout(\I_BAUDGEN|baudRateReg[3]~22_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[3]~23 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[3]~22 .lut_mask = 16'h5A5F;
+defparam \I_BAUDGEN|baudRateReg[3]~22 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N7
+dffeas \I_BAUDGEN|baudRateReg[3] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[3]~22_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[3] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N8
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[4]~24 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[4]~24_combout  = (\I_BAUDGEN|baudRateReg [4] & (\I_BAUDGEN|baudRateReg[3]~23  $ (GND))) # (!\I_BAUDGEN|baudRateReg [4] & (!\I_BAUDGEN|baudRateReg[3]~23  & VCC))
+// \I_BAUDGEN|baudRateReg[4]~25  = CARRY((\I_BAUDGEN|baudRateReg [4] & !\I_BAUDGEN|baudRateReg[3]~23 ))
+
+	.dataa(gnd),
+	.datab(\I_BAUDGEN|baudRateReg [4]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[3]~23 ),
+	.combout(\I_BAUDGEN|baudRateReg[4]~24_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[4]~25 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[4]~24 .lut_mask = 16'hC30C;
+defparam \I_BAUDGEN|baudRateReg[4]~24 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N9
+dffeas \I_BAUDGEN|baudRateReg[4] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[4]~24_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[4] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N10
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[5]~26 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[5]~26_combout  = (\I_BAUDGEN|baudRateReg [5] & (!\I_BAUDGEN|baudRateReg[4]~25 )) # (!\I_BAUDGEN|baudRateReg [5] & ((\I_BAUDGEN|baudRateReg[4]~25 ) # (GND)))
+// \I_BAUDGEN|baudRateReg[5]~27  = CARRY((!\I_BAUDGEN|baudRateReg[4]~25 ) # (!\I_BAUDGEN|baudRateReg [5]))
+
+	.dataa(\I_BAUDGEN|baudRateReg [5]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[4]~25 ),
+	.combout(\I_BAUDGEN|baudRateReg[5]~26_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[5]~27 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[5]~26 .lut_mask = 16'h5A5F;
+defparam \I_BAUDGEN|baudRateReg[5]~26 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N11
+dffeas \I_BAUDGEN|baudRateReg[5] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[5]~26_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[5] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N12
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[6]~28 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[6]~28_combout  = (\I_BAUDGEN|baudRateReg [6] & (\I_BAUDGEN|baudRateReg[5]~27  $ (GND))) # (!\I_BAUDGEN|baudRateReg [6] & (!\I_BAUDGEN|baudRateReg[5]~27  & VCC))
+// \I_BAUDGEN|baudRateReg[6]~29  = CARRY((\I_BAUDGEN|baudRateReg [6] & !\I_BAUDGEN|baudRateReg[5]~27 ))
+
+	.dataa(\I_BAUDGEN|baudRateReg [6]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[5]~27 ),
+	.combout(\I_BAUDGEN|baudRateReg[6]~28_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[6]~29 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[6]~28 .lut_mask = 16'hA50A;
+defparam \I_BAUDGEN|baudRateReg[6]~28 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N13
+dffeas \I_BAUDGEN|baudRateReg[6] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[6]~28_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[6] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N14
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[7]~30 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[7]~30_combout  = (\I_BAUDGEN|baudRateReg [7] & (!\I_BAUDGEN|baudRateReg[6]~29 )) # (!\I_BAUDGEN|baudRateReg [7] & ((\I_BAUDGEN|baudRateReg[6]~29 ) # (GND)))
+// \I_BAUDGEN|baudRateReg[7]~31  = CARRY((!\I_BAUDGEN|baudRateReg[6]~29 ) # (!\I_BAUDGEN|baudRateReg [7]))
+
+	.dataa(gnd),
+	.datab(\I_BAUDGEN|baudRateReg [7]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[6]~29 ),
+	.combout(\I_BAUDGEN|baudRateReg[7]~30_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[7]~31 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[7]~30 .lut_mask = 16'h3C3F;
+defparam \I_BAUDGEN|baudRateReg[7]~30 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N15
+dffeas \I_BAUDGEN|baudRateReg[7] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[7]~30_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[7] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N16
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[8]~32 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[8]~32_combout  = (\I_BAUDGEN|baudRateReg [8] & (\I_BAUDGEN|baudRateReg[7]~31  $ (GND))) # (!\I_BAUDGEN|baudRateReg [8] & (!\I_BAUDGEN|baudRateReg[7]~31  & VCC))
+// \I_BAUDGEN|baudRateReg[8]~33  = CARRY((\I_BAUDGEN|baudRateReg [8] & !\I_BAUDGEN|baudRateReg[7]~31 ))
+
+	.dataa(gnd),
+	.datab(\I_BAUDGEN|baudRateReg [8]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[7]~31 ),
+	.combout(\I_BAUDGEN|baudRateReg[8]~32_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[8]~33 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[8]~32 .lut_mask = 16'hC30C;
+defparam \I_BAUDGEN|baudRateReg[8]~32 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N17
+dffeas \I_BAUDGEN|baudRateReg[8] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[8]~32_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[8] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N18
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[9]~34 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[9]~34_combout  = (\I_BAUDGEN|baudRateReg [9] & (!\I_BAUDGEN|baudRateReg[8]~33 )) # (!\I_BAUDGEN|baudRateReg [9] & ((\I_BAUDGEN|baudRateReg[8]~33 ) # (GND)))
+// \I_BAUDGEN|baudRateReg[9]~35  = CARRY((!\I_BAUDGEN|baudRateReg[8]~33 ) # (!\I_BAUDGEN|baudRateReg [9]))
+
+	.dataa(gnd),
+	.datab(\I_BAUDGEN|baudRateReg [9]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[8]~33 ),
+	.combout(\I_BAUDGEN|baudRateReg[9]~34_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[9]~35 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[9]~34 .lut_mask = 16'h3C3F;
+defparam \I_BAUDGEN|baudRateReg[9]~34 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N19
+dffeas \I_BAUDGEN|baudRateReg[9] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[9]~34_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[9] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N20
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[10]~36 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[10]~36_combout  = (\I_BAUDGEN|baudRateReg [10] & (\I_BAUDGEN|baudRateReg[9]~35  $ (GND))) # (!\I_BAUDGEN|baudRateReg [10] & (!\I_BAUDGEN|baudRateReg[9]~35  & VCC))
+// \I_BAUDGEN|baudRateReg[10]~37  = CARRY((\I_BAUDGEN|baudRateReg [10] & !\I_BAUDGEN|baudRateReg[9]~35 ))
+
+	.dataa(gnd),
+	.datab(\I_BAUDGEN|baudRateReg [10]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[9]~35 ),
+	.combout(\I_BAUDGEN|baudRateReg[10]~36_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[10]~37 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[10]~36 .lut_mask = 16'hC30C;
+defparam \I_BAUDGEN|baudRateReg[10]~36 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N21
+dffeas \I_BAUDGEN|baudRateReg[10] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[10]~36_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[10] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N22
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[11]~38 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[11]~38_combout  = (\I_BAUDGEN|baudRateReg [11] & (!\I_BAUDGEN|baudRateReg[10]~37 )) # (!\I_BAUDGEN|baudRateReg [11] & ((\I_BAUDGEN|baudRateReg[10]~37 ) # (GND)))
+// \I_BAUDGEN|baudRateReg[11]~39  = CARRY((!\I_BAUDGEN|baudRateReg[10]~37 ) # (!\I_BAUDGEN|baudRateReg [11]))
+
+	.dataa(\I_BAUDGEN|baudRateReg [11]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[10]~37 ),
+	.combout(\I_BAUDGEN|baudRateReg[11]~38_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[11]~39 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[11]~38 .lut_mask = 16'h5A5F;
+defparam \I_BAUDGEN|baudRateReg[11]~38 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N23
+dffeas \I_BAUDGEN|baudRateReg[11] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[11]~38_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[11] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X29_Y1_N12
+cycloneive_lcell_comb \I_BAUDGEN|Equal0~2 (
+// Equation(s):
+// \I_BAUDGEN|Equal0~2_combout  = (\I_BAUDGEN|baudRateReg [8] & (!\I_BAUDGEN|baudRateReg [11] & (!\I_BAUDGEN|baudRateReg [9] & !\I_BAUDGEN|baudRateReg [10])))
+
+	.dataa(\I_BAUDGEN|baudRateReg [8]),
+	.datab(\I_BAUDGEN|baudRateReg [11]),
+	.datac(\I_BAUDGEN|baudRateReg [9]),
+	.datad(\I_BAUDGEN|baudRateReg [10]),
+	.cin(gnd),
+	.combout(\I_BAUDGEN|Equal0~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_BAUDGEN|Equal0~2 .lut_mask = 16'h0002;
+defparam \I_BAUDGEN|Equal0~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N24
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[12]~40 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[12]~40_combout  = (\I_BAUDGEN|baudRateReg [12] & (\I_BAUDGEN|baudRateReg[11]~39  $ (GND))) # (!\I_BAUDGEN|baudRateReg [12] & (!\I_BAUDGEN|baudRateReg[11]~39  & VCC))
+// \I_BAUDGEN|baudRateReg[12]~41  = CARRY((\I_BAUDGEN|baudRateReg [12] & !\I_BAUDGEN|baudRateReg[11]~39 ))
+
+	.dataa(gnd),
+	.datab(\I_BAUDGEN|baudRateReg [12]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[11]~39 ),
+	.combout(\I_BAUDGEN|baudRateReg[12]~40_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[12]~41 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[12]~40 .lut_mask = 16'hC30C;
+defparam \I_BAUDGEN|baudRateReg[12]~40 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N25
+dffeas \I_BAUDGEN|baudRateReg[12] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[12]~40_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[12] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N26
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[13]~42 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[13]~42_combout  = (\I_BAUDGEN|baudRateReg [13] & (!\I_BAUDGEN|baudRateReg[12]~41 )) # (!\I_BAUDGEN|baudRateReg [13] & ((\I_BAUDGEN|baudRateReg[12]~41 ) # (GND)))
+// \I_BAUDGEN|baudRateReg[13]~43  = CARRY((!\I_BAUDGEN|baudRateReg[12]~41 ) # (!\I_BAUDGEN|baudRateReg [13]))
+
+	.dataa(\I_BAUDGEN|baudRateReg [13]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[12]~41 ),
+	.combout(\I_BAUDGEN|baudRateReg[13]~42_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[13]~43 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[13]~42 .lut_mask = 16'h5A5F;
+defparam \I_BAUDGEN|baudRateReg[13]~42 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N27
+dffeas \I_BAUDGEN|baudRateReg[13] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[13]~42_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[13] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N28
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[14]~44 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[14]~44_combout  = (\I_BAUDGEN|baudRateReg [14] & (\I_BAUDGEN|baudRateReg[13]~43  $ (GND))) # (!\I_BAUDGEN|baudRateReg [14] & (!\I_BAUDGEN|baudRateReg[13]~43  & VCC))
+// \I_BAUDGEN|baudRateReg[14]~45  = CARRY((\I_BAUDGEN|baudRateReg [14] & !\I_BAUDGEN|baudRateReg[13]~43 ))
+
+	.dataa(gnd),
+	.datab(\I_BAUDGEN|baudRateReg [14]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_BAUDGEN|baudRateReg[13]~43 ),
+	.combout(\I_BAUDGEN|baudRateReg[14]~44_combout ),
+	.cout(\I_BAUDGEN|baudRateReg[14]~45 ));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[14]~44 .lut_mask = 16'hC30C;
+defparam \I_BAUDGEN|baudRateReg[14]~44 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N29
+dffeas \I_BAUDGEN|baudRateReg[14] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[14]~44_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[14] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X28_Y1_N30
+cycloneive_lcell_comb \I_BAUDGEN|baudRateReg[15]~46 (
+// Equation(s):
+// \I_BAUDGEN|baudRateReg[15]~46_combout  = \I_BAUDGEN|baudRateReg [15] $ (\I_BAUDGEN|baudRateReg[14]~45 )
+
+	.dataa(\I_BAUDGEN|baudRateReg [15]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\I_BAUDGEN|baudRateReg[14]~45 ),
+	.combout(\I_BAUDGEN|baudRateReg[15]~46_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[15]~46 .lut_mask = 16'h5A5A;
+defparam \I_BAUDGEN|baudRateReg[15]~46 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X28_Y1_N31
+dffeas \I_BAUDGEN|baudRateReg[15] (
+	.clk(\Clk~input_o ),
+	.d(\I_BAUDGEN|baudRateReg[15]~46_combout ),
+	.asdata(\~GND~combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_BAUDGEN|Equal0~combout ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_BAUDGEN|baudRateReg [15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_BAUDGEN|baudRateReg[15] .is_wysiwyg = "true";
+defparam \I_BAUDGEN|baudRateReg[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X29_Y1_N24
+cycloneive_lcell_comb \I_BAUDGEN|Equal0~3 (
+// Equation(s):
+// \I_BAUDGEN|Equal0~3_combout  = (!\I_BAUDGEN|baudRateReg [13] & (!\I_BAUDGEN|baudRateReg [14] & (!\I_BAUDGEN|baudRateReg [12] & !\I_BAUDGEN|baudRateReg [15])))
+
+	.dataa(\I_BAUDGEN|baudRateReg [13]),
+	.datab(\I_BAUDGEN|baudRateReg [14]),
+	.datac(\I_BAUDGEN|baudRateReg [12]),
+	.datad(\I_BAUDGEN|baudRateReg [15]),
+	.cin(gnd),
+	.combout(\I_BAUDGEN|Equal0~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_BAUDGEN|Equal0~3 .lut_mask = 16'h0001;
+defparam \I_BAUDGEN|Equal0~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X29_Y1_N26
+cycloneive_lcell_comb \I_BAUDGEN|Equal0~0 (
+// Equation(s):
+// \I_BAUDGEN|Equal0~0_combout  = (!\I_BAUDGEN|baudRateReg [1] & (!\I_BAUDGEN|baudRateReg [3] & (\I_BAUDGEN|baudRateReg [2] & !\I_BAUDGEN|baudRateReg [0])))
+
+	.dataa(\I_BAUDGEN|baudRateReg [1]),
+	.datab(\I_BAUDGEN|baudRateReg [3]),
+	.datac(\I_BAUDGEN|baudRateReg [2]),
+	.datad(\I_BAUDGEN|baudRateReg [0]),
+	.cin(gnd),
+	.combout(\I_BAUDGEN|Equal0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_BAUDGEN|Equal0~0 .lut_mask = 16'h0010;
+defparam \I_BAUDGEN|Equal0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X29_Y1_N10
+cycloneive_lcell_comb \I_BAUDGEN|Equal0~1 (
+// Equation(s):
+// \I_BAUDGEN|Equal0~1_combout  = (!\I_BAUDGEN|baudRateReg [7] & (!\I_BAUDGEN|baudRateReg [4] & (!\I_BAUDGEN|baudRateReg [5] & \I_BAUDGEN|baudRateReg [6])))
+
+	.dataa(\I_BAUDGEN|baudRateReg [7]),
+	.datab(\I_BAUDGEN|baudRateReg [4]),
+	.datac(\I_BAUDGEN|baudRateReg [5]),
+	.datad(\I_BAUDGEN|baudRateReg [6]),
+	.cin(gnd),
+	.combout(\I_BAUDGEN|Equal0~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_BAUDGEN|Equal0~1 .lut_mask = 16'h0100;
+defparam \I_BAUDGEN|Equal0~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X29_Y1_N0
+cycloneive_lcell_comb \I_BAUDGEN|Equal0 (
+// Equation(s):
+// \I_BAUDGEN|Equal0~combout  = LCELL((\I_BAUDGEN|Equal0~2_combout  & (\I_BAUDGEN|Equal0~3_combout  & (\I_BAUDGEN|Equal0~0_combout  & \I_BAUDGEN|Equal0~1_combout ))))
+
+	.dataa(\I_BAUDGEN|Equal0~2_combout ),
+	.datab(\I_BAUDGEN|Equal0~3_combout ),
+	.datac(\I_BAUDGEN|Equal0~0_combout ),
+	.datad(\I_BAUDGEN|Equal0~1_combout ),
+	.cin(gnd),
+	.combout(\I_BAUDGEN|Equal0~combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_BAUDGEN|Equal0 .lut_mask = 16'h8000;
+defparam \I_BAUDGEN|Equal0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: CLKCTRL_G15
+cycloneive_clkctrl \I_BAUDGEN|Equal0~clkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\I_BAUDGEN|Equal0~combout }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\I_BAUDGEN|Equal0~clkctrl_outclk ));
+// synopsys translate_off
+defparam \I_BAUDGEN|Equal0~clkctrl .clock_type = "global clock";
+defparam \I_BAUDGEN|Equal0~clkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N10
+cycloneive_lcell_comb \I_RS232TX|counter[0]~3 (
+// Equation(s):
+// \I_RS232TX|counter[0]~3_combout  = !\I_RS232TX|counter [0]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\I_RS232TX|counter [0]),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\I_RS232TX|counter[0]~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|counter[0]~3 .lut_mask = 16'h0F0F;
+defparam \I_RS232TX|counter[0]~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N18
+cycloneive_lcell_comb \I_RS232TX|R_edge[0]~feeder (
+// Equation(s):
+// \I_RS232TX|R_edge[0]~feeder_combout  = VCC
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\I_RS232TX|R_edge[0]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|R_edge[0]~feeder .lut_mask = 16'hFFFF;
+defparam \I_RS232TX|R_edge[0]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N19
+dffeas \I_RS232TX|R_edge[0] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232TX|R_edge[0]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|R_edge [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|R_edge[0] .is_wysiwyg = "true";
+defparam \I_RS232TX|R_edge[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N24
+cycloneive_lcell_comb \I_RS232TX|R_edge[1]~feeder (
+// Equation(s):
+// \I_RS232TX|R_edge[1]~feeder_combout  = \I_RS232TX|R_edge [0]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232TX|R_edge [0]),
+	.cin(gnd),
+	.combout(\I_RS232TX|R_edge[1]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|R_edge[1]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232TX|R_edge[1]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N25
+dffeas \I_RS232TX|R_edge[1] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232TX|R_edge[1]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|R_edge [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|R_edge[1] .is_wysiwyg = "true";
+defparam \I_RS232TX|R_edge[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N8
+cycloneive_lcell_comb \I_RS232TX|D_edge (
+// Equation(s):
+// \I_RS232TX|D_edge~combout  = (\I_RS232TX|R_edge [0] & !\I_RS232TX|R_edge [1])
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|R_edge [0]),
+	.datac(gnd),
+	.datad(\I_RS232TX|R_edge [1]),
+	.cin(gnd),
+	.combout(\I_RS232TX|D_edge~combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|D_edge .lut_mask = 16'h00CC;
+defparam \I_RS232TX|D_edge .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N16
+cycloneive_lcell_comb \I_RS232TX|Add1~0 (
+// Equation(s):
+// \I_RS232TX|Add1~0_combout  = \I_RS232TX|Bit [0] $ (VCC)
+// \I_RS232TX|Add1~1  = CARRY(\I_RS232TX|Bit [0])
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|Bit [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\I_RS232TX|Add1~0_combout ),
+	.cout(\I_RS232TX|Add1~1 ));
+// synopsys translate_off
+defparam \I_RS232TX|Add1~0 .lut_mask = 16'h33CC;
+defparam \I_RS232TX|Add1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N8
+cycloneive_lcell_comb \I_RS232TX|start_bit~0 (
+// Equation(s):
+// \I_RS232TX|start_bit~0_combout  = (\I_RS232TX|State~q  & ((\I_RS232TX|Equal1~0_combout ) # (\I_RS232TX|start_bit~q )))
+
+	.dataa(\I_RS232TX|Equal1~0_combout ),
+	.datab(\I_RS232TX|State~q ),
+	.datac(\I_RS232TX|start_bit~q ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\I_RS232TX|start_bit~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|start_bit~0 .lut_mask = 16'hC8C8;
+defparam \I_RS232TX|start_bit~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y31_N9
+dffeas \I_RS232TX|start_bit (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|start_bit~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|start_bit~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|start_bit .is_wysiwyg = "true";
+defparam \I_RS232TX|start_bit .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N12
+cycloneive_lcell_comb \I_RS232TX|LessThan0~1 (
+// Equation(s):
+// \I_RS232TX|LessThan0~1_combout  = (\I_RS232TX|Bit [1] & (\I_RS232TX|Bit [2] & \I_RS232TX|Bit [0]))
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|Bit [1]),
+	.datac(\I_RS232TX|Bit [2]),
+	.datad(\I_RS232TX|Bit [0]),
+	.cin(gnd),
+	.combout(\I_RS232TX|LessThan0~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|LessThan0~1 .lut_mask = 16'hC000;
+defparam \I_RS232TX|LessThan0~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N28
+cycloneive_lcell_comb \I_RS232TX|always3~3 (
+// Equation(s):
+// \I_RS232TX|always3~3_combout  = (\I_RS232TX|Equal1~0_combout  & (\I_RS232TX|start_bit~q  & (\I_RS232TX|LessThan0~0_combout  & !\I_RS232TX|LessThan0~1_combout )))
+
+	.dataa(\I_RS232TX|Equal1~0_combout ),
+	.datab(\I_RS232TX|start_bit~q ),
+	.datac(\I_RS232TX|LessThan0~0_combout ),
+	.datad(\I_RS232TX|LessThan0~1_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|always3~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|always3~3 .lut_mask = 16'h0080;
+defparam \I_RS232TX|always3~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N8
+cycloneive_lcell_comb \I_RS232TX|Bit[4]~0 (
+// Equation(s):
+// \I_RS232TX|Bit[4]~0_combout  = (\I_RS232TX|State~q  & ((\I_RS232TX|always3~4_combout ) # (\I_RS232TX|always3~3_combout )))
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|State~q ),
+	.datac(\I_RS232TX|always3~4_combout ),
+	.datad(\I_RS232TX|always3~3_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|Bit[4]~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|Bit[4]~0 .lut_mask = 16'hCCC0;
+defparam \I_RS232TX|Bit[4]~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X3_Y31_N17
+dffeas \I_RS232TX|Bit[0] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|Add1~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|Bit[4]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|Bit [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|Bit[0] .is_wysiwyg = "true";
+defparam \I_RS232TX|Bit[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N18
+cycloneive_lcell_comb \I_RS232TX|Add1~2 (
+// Equation(s):
+// \I_RS232TX|Add1~2_combout  = (\I_RS232TX|Bit [1] & (!\I_RS232TX|Add1~1 )) # (!\I_RS232TX|Bit [1] & ((\I_RS232TX|Add1~1 ) # (GND)))
+// \I_RS232TX|Add1~3  = CARRY((!\I_RS232TX|Add1~1 ) # (!\I_RS232TX|Bit [1]))
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|Bit [1]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_RS232TX|Add1~1 ),
+	.combout(\I_RS232TX|Add1~2_combout ),
+	.cout(\I_RS232TX|Add1~3 ));
+// synopsys translate_off
+defparam \I_RS232TX|Add1~2 .lut_mask = 16'h3C3F;
+defparam \I_RS232TX|Add1~2 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X3_Y31_N19
+dffeas \I_RS232TX|Bit[1] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|Add1~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|Bit[4]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|Bit [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|Bit[1] .is_wysiwyg = "true";
+defparam \I_RS232TX|Bit[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N20
+cycloneive_lcell_comb \I_RS232TX|Add1~4 (
+// Equation(s):
+// \I_RS232TX|Add1~4_combout  = (\I_RS232TX|Bit [2] & (\I_RS232TX|Add1~3  $ (GND))) # (!\I_RS232TX|Bit [2] & (!\I_RS232TX|Add1~3  & VCC))
+// \I_RS232TX|Add1~5  = CARRY((\I_RS232TX|Bit [2] & !\I_RS232TX|Add1~3 ))
+
+	.dataa(\I_RS232TX|Bit [2]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_RS232TX|Add1~3 ),
+	.combout(\I_RS232TX|Add1~4_combout ),
+	.cout(\I_RS232TX|Add1~5 ));
+// synopsys translate_off
+defparam \I_RS232TX|Add1~4 .lut_mask = 16'hA50A;
+defparam \I_RS232TX|Add1~4 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X3_Y31_N21
+dffeas \I_RS232TX|Bit[2] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|Add1~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|Bit[4]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|Bit [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|Bit[2] .is_wysiwyg = "true";
+defparam \I_RS232TX|Bit[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N22
+cycloneive_lcell_comb \I_RS232TX|Add1~6 (
+// Equation(s):
+// \I_RS232TX|Add1~6_combout  = (\I_RS232TX|Bit [3] & (!\I_RS232TX|Add1~5 )) # (!\I_RS232TX|Bit [3] & ((\I_RS232TX|Add1~5 ) # (GND)))
+// \I_RS232TX|Add1~7  = CARRY((!\I_RS232TX|Add1~5 ) # (!\I_RS232TX|Bit [3]))
+
+	.dataa(\I_RS232TX|Bit [3]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_RS232TX|Add1~5 ),
+	.combout(\I_RS232TX|Add1~6_combout ),
+	.cout(\I_RS232TX|Add1~7 ));
+// synopsys translate_off
+defparam \I_RS232TX|Add1~6 .lut_mask = 16'h5A5F;
+defparam \I_RS232TX|Add1~6 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N4
+cycloneive_lcell_comb \I_RS232TX|Bit[3]~1 (
+// Equation(s):
+// \I_RS232TX|Bit[3]~1_combout  = (\I_RS232TX|Bit [3]) # ((!\I_RS232TX|always3~4_combout  & (\I_RS232TX|Add1~6_combout  & \I_RS232TX|Bit[4]~0_combout )))
+
+	.dataa(\I_RS232TX|always3~4_combout ),
+	.datab(\I_RS232TX|Add1~6_combout ),
+	.datac(\I_RS232TX|Bit [3]),
+	.datad(\I_RS232TX|Bit[4]~0_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|Bit[3]~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|Bit[3]~1 .lut_mask = 16'hF4F0;
+defparam \I_RS232TX|Bit[3]~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y31_N5
+dffeas \I_RS232TX|Bit[3] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|Bit[3]~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|Bit [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|Bit[3] .is_wysiwyg = "true";
+defparam \I_RS232TX|Bit[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N24
+cycloneive_lcell_comb \I_RS232TX|Add1~8 (
+// Equation(s):
+// \I_RS232TX|Add1~8_combout  = \I_RS232TX|Add1~7  $ (!\I_RS232TX|Bit [4])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232TX|Bit [4]),
+	.cin(\I_RS232TX|Add1~7 ),
+	.combout(\I_RS232TX|Add1~8_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|Add1~8 .lut_mask = 16'hF00F;
+defparam \I_RS232TX|Add1~8 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X3_Y31_N25
+dffeas \I_RS232TX|Bit[4] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|Add1~8_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|Bit[4]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|Bit [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|Bit[4] .is_wysiwyg = "true";
+defparam \I_RS232TX|Bit[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N22
+cycloneive_lcell_comb \I_RS232TX|LessThan0~0 (
+// Equation(s):
+// \I_RS232TX|LessThan0~0_combout  = (!\I_RS232TX|Bit [3] & !\I_RS232TX|Bit [4])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\I_RS232TX|Bit [3]),
+	.datad(\I_RS232TX|Bit [4]),
+	.cin(gnd),
+	.combout(\I_RS232TX|LessThan0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|LessThan0~0 .lut_mask = 16'h000F;
+defparam \I_RS232TX|LessThan0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N0
+cycloneive_lcell_comb \I_RS232TX|always3~4 (
+// Equation(s):
+// \I_RS232TX|always3~4_combout  = (\I_RS232TX|LessThan0~0_combout  & (\I_RS232TX|stop_bit~q  & (\I_RS232TX|Equal1~0_combout  & \I_RS232TX|LessThan0~1_combout )))
+
+	.dataa(\I_RS232TX|LessThan0~0_combout ),
+	.datab(\I_RS232TX|stop_bit~q ),
+	.datac(\I_RS232TX|Equal1~0_combout ),
+	.datad(\I_RS232TX|LessThan0~1_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|always3~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|always3~4 .lut_mask = 16'h8000;
+defparam \I_RS232TX|always3~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N14
+cycloneive_lcell_comb \I_RS232TX|TxDone~0 (
+// Equation(s):
+// \I_RS232TX|TxDone~0_combout  = (\I_RS232TX|TxDone~q ) # (\I_RS232TX|always3~4_combout )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\I_RS232TX|TxDone~q ),
+	.datad(\I_RS232TX|always3~4_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|TxDone~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|TxDone~0 .lut_mask = 16'hFFF0;
+defparam \I_RS232TX|TxDone~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y31_N15
+dffeas \I_RS232TX|TxDone (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|TxDone~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\I_RS232TX|State~q ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|TxDone~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|TxDone .is_wysiwyg = "true";
+defparam \I_RS232TX|TxDone .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N26
+cycloneive_lcell_comb \I_RS232TX|TxDone~_wirecell (
+// Equation(s):
+// \I_RS232TX|TxDone~_wirecell_combout  = !\I_RS232TX|TxDone~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232TX|TxDone~q ),
+	.cin(gnd),
+	.combout(\I_RS232TX|TxDone~_wirecell_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|TxDone~_wirecell .lut_mask = 16'h00FF;
+defparam \I_RS232TX|TxDone~_wirecell .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N9
+dffeas \I_RS232TX|State (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232TX|D_edge~combout ),
+	.asdata(\I_RS232TX|TxDone~_wirecell_combout ),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\I_RS232TX|State~q ),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|State~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|State .is_wysiwyg = "true";
+defparam \I_RS232TX|State .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X4_Y31_N11
+dffeas \I_RS232TX|counter[0] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|counter[0]~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|State~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|counter [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|counter[0] .is_wysiwyg = "true";
+defparam \I_RS232TX|counter[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N12
+cycloneive_lcell_comb \I_RS232TX|counter~2 (
+// Equation(s):
+// \I_RS232TX|counter~2_combout  = \I_RS232TX|counter [1] $ (\I_RS232TX|counter [0])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\I_RS232TX|counter [1]),
+	.datad(\I_RS232TX|counter [0]),
+	.cin(gnd),
+	.combout(\I_RS232TX|counter~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|counter~2 .lut_mask = 16'h0FF0;
+defparam \I_RS232TX|counter~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y31_N13
+dffeas \I_RS232TX|counter[1] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|counter~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|State~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|counter [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|counter[1] .is_wysiwyg = "true";
+defparam \I_RS232TX|counter[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N18
+cycloneive_lcell_comb \I_RS232TX|Add0~1 (
+// Equation(s):
+// \I_RS232TX|Add0~1_combout  = \I_RS232TX|counter [2] $ (((\I_RS232TX|counter [1] & \I_RS232TX|counter [0])))
+
+	.dataa(\I_RS232TX|counter [1]),
+	.datab(\I_RS232TX|counter [2]),
+	.datac(gnd),
+	.datad(\I_RS232TX|counter [0]),
+	.cin(gnd),
+	.combout(\I_RS232TX|Add0~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|Add0~1 .lut_mask = 16'h66CC;
+defparam \I_RS232TX|Add0~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N14
+cycloneive_lcell_comb \I_RS232TX|always3~5 (
+// Equation(s):
+// \I_RS232TX|always3~5_combout  = (!\I_RS232TX|Bit [3] & (!\I_RS232TX|Bit [4] & (\I_RS232TX|LessThan0~1_combout  & \I_RS232TX|Equal1~0_combout )))
+
+	.dataa(\I_RS232TX|Bit [3]),
+	.datab(\I_RS232TX|Bit [4]),
+	.datac(\I_RS232TX|LessThan0~1_combout ),
+	.datad(\I_RS232TX|Equal1~0_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|always3~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|always3~5 .lut_mask = 16'h1000;
+defparam \I_RS232TX|always3~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N16
+cycloneive_lcell_comb \I_RS232TX|counter~1 (
+// Equation(s):
+// \I_RS232TX|counter~1_combout  = (!\I_RS232TX|always3~3_combout  & (\I_RS232TX|Add0~1_combout  & !\I_RS232TX|always3~5_combout ))
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|always3~3_combout ),
+	.datac(\I_RS232TX|Add0~1_combout ),
+	.datad(\I_RS232TX|always3~5_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|counter~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|counter~1 .lut_mask = 16'h0030;
+defparam \I_RS232TX|counter~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y31_N17
+dffeas \I_RS232TX|counter[2] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|counter~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|State~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|counter [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|counter[2] .is_wysiwyg = "true";
+defparam \I_RS232TX|counter[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N2
+cycloneive_lcell_comb \I_RS232TX|Add0~0 (
+// Equation(s):
+// \I_RS232TX|Add0~0_combout  = \I_RS232TX|counter [3] $ (((\I_RS232TX|counter [1] & (\I_RS232TX|counter [0] & \I_RS232TX|counter [2]))))
+
+	.dataa(\I_RS232TX|counter [1]),
+	.datab(\I_RS232TX|counter [3]),
+	.datac(\I_RS232TX|counter [0]),
+	.datad(\I_RS232TX|counter [2]),
+	.cin(gnd),
+	.combout(\I_RS232TX|Add0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|Add0~0 .lut_mask = 16'h6CCC;
+defparam \I_RS232TX|Add0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N30
+cycloneive_lcell_comb \I_RS232TX|counter~0 (
+// Equation(s):
+// \I_RS232TX|counter~0_combout  = (\I_RS232TX|Add0~0_combout  & (!\I_RS232TX|always3~3_combout  & !\I_RS232TX|always3~5_combout ))
+
+	.dataa(\I_RS232TX|Add0~0_combout ),
+	.datab(\I_RS232TX|always3~3_combout ),
+	.datac(gnd),
+	.datad(\I_RS232TX|always3~5_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|counter~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|counter~0 .lut_mask = 16'h0022;
+defparam \I_RS232TX|counter~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y31_N31
+dffeas \I_RS232TX|counter[3] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|counter~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|State~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|counter [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|counter[3] .is_wysiwyg = "true";
+defparam \I_RS232TX|counter[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N26
+cycloneive_lcell_comb \I_RS232TX|Equal1~0 (
+// Equation(s):
+// \I_RS232TX|Equal1~0_combout  = (\I_RS232TX|counter [0] & (\I_RS232TX|counter [2] & (\I_RS232TX|counter [3] & \I_RS232TX|counter [1])))
+
+	.dataa(\I_RS232TX|counter [0]),
+	.datab(\I_RS232TX|counter [2]),
+	.datac(\I_RS232TX|counter [3]),
+	.datad(\I_RS232TX|counter [1]),
+	.cin(gnd),
+	.combout(\I_RS232TX|Equal1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|Equal1~0 .lut_mask = 16'h8000;
+defparam \I_RS232TX|Equal1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N24
+cycloneive_lcell_comb \I_RS232TX|stop_bit~0 (
+// Equation(s):
+// \I_RS232TX|stop_bit~0_combout  = (\I_RS232TX|stop_bit~q ) # ((\I_RS232TX|Equal1~0_combout  & (\I_RS232TX|LessThan0~0_combout  & \I_RS232TX|LessThan0~1_combout )))
+
+	.dataa(\I_RS232TX|Equal1~0_combout ),
+	.datab(\I_RS232TX|LessThan0~0_combout ),
+	.datac(\I_RS232TX|stop_bit~q ),
+	.datad(\I_RS232TX|LessThan0~1_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|stop_bit~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|stop_bit~0 .lut_mask = 16'hF8F0;
+defparam \I_RS232TX|stop_bit~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y31_N25
+dffeas \I_RS232TX|stop_bit (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|stop_bit~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\I_RS232TX|State~q ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|stop_bit~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|stop_bit .is_wysiwyg = "true";
+defparam \I_RS232TX|stop_bit .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X1_Y34_N1
+cycloneive_io_ibuf \Rx~input (
+	.i(Rx),
+	.ibar(gnd),
+	.o(\Rx~input_o ));
+// synopsys translate_off
+defparam \Rx~input .bus_hold = "false";
+defparam \Rx~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y30_N10
+cycloneive_lcell_comb \I_RS232RX|Read_data[7]~feeder (
+// Equation(s):
+// \I_RS232RX|Read_data[7]~feeder_combout  = \Rx~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\Rx~input_o ),
+	.cin(gnd),
+	.combout(\I_RS232RX|Read_data[7]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[7]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|Read_data[7]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N24
+cycloneive_lcell_comb \I_RS232RX|counter~4 (
+// Equation(s):
+// \I_RS232RX|counter~4_combout  = \I_RS232RX|counter [1] $ (\I_RS232RX|counter [0])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\I_RS232RX|counter [1]),
+	.datad(\I_RS232RX|counter [0]),
+	.cin(gnd),
+	.combout(\I_RS232RX|counter~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|counter~4 .lut_mask = 16'h0FF0;
+defparam \I_RS232RX|counter~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N12
+cycloneive_lcell_comb \I_RS232RX|Add1~0 (
+// Equation(s):
+// \I_RS232RX|Add1~0_combout  = \I_RS232RX|Bit [0] $ (VCC)
+// \I_RS232RX|Add1~1  = CARRY(\I_RS232RX|Bit [0])
+
+	.dataa(gnd),
+	.datab(\I_RS232RX|Bit [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\I_RS232RX|Add1~0_combout ),
+	.cout(\I_RS232RX|Add1~1 ));
+// synopsys translate_off
+defparam \I_RS232RX|Add1~0 .lut_mask = 16'h33CC;
+defparam \I_RS232RX|Add1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N6
+cycloneive_lcell_comb \I_RS232RX|Add0~0 (
+// Equation(s):
+// \I_RS232RX|Add0~0_combout  = \I_RS232RX|counter [3] $ (((\I_RS232RX|counter [0] & (\I_RS232RX|counter [1] & \I_RS232RX|counter [2]))))
+
+	.dataa(\I_RS232RX|counter [0]),
+	.datab(\I_RS232RX|counter [1]),
+	.datac(\I_RS232RX|counter [3]),
+	.datad(\I_RS232RX|counter [2]),
+	.cin(gnd),
+	.combout(\I_RS232RX|Add0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|Add0~0 .lut_mask = 16'h78F0;
+defparam \I_RS232RX|Add0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N26
+cycloneive_lcell_comb \I_RS232RX|always3~3 (
+// Equation(s):
+// \I_RS232RX|always3~3_combout  = (\I_RS232RX|start_bit~q  & (\I_RS232RX|counter [3] & (!\I_RS232RX|Bit [3] & \I_RS232RX|always3~0_combout )))
+
+	.dataa(\I_RS232RX|start_bit~q ),
+	.datab(\I_RS232RX|counter [3]),
+	.datac(\I_RS232RX|Bit [3]),
+	.datad(\I_RS232RX|always3~0_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|always3~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|always3~3 .lut_mask = 16'h0800;
+defparam \I_RS232RX|always3~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N18
+cycloneive_lcell_comb \I_RS232RX|counter~0 (
+// Equation(s):
+// \I_RS232RX|counter~0_combout  = (!\I_RS232RX|always3~3_combout  & (!\I_RS232RX|always3~5_combout  & ((!\I_RS232RX|counter [3]) # (!\I_RS232RX|always3~2_combout ))))
+
+	.dataa(\I_RS232RX|always3~2_combout ),
+	.datab(\I_RS232RX|counter [3]),
+	.datac(\I_RS232RX|always3~3_combout ),
+	.datad(\I_RS232RX|always3~5_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|counter~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|counter~0 .lut_mask = 16'h0007;
+defparam \I_RS232RX|counter~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N14
+cycloneive_lcell_comb \I_RS232RX|counter~1 (
+// Equation(s):
+// \I_RS232RX|counter~1_combout  = (\I_RS232RX|Add0~0_combout  & \I_RS232RX|counter~0_combout )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\I_RS232RX|Add0~0_combout ),
+	.datad(\I_RS232RX|counter~0_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|counter~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|counter~1 .lut_mask = 16'hF000;
+defparam \I_RS232RX|counter~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X6_Y30_N15
+dffeas \I_RS232RX|counter[3] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|counter~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|State.READ~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|counter [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|counter[3] .is_wysiwyg = "true";
+defparam \I_RS232RX|counter[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N4
+cycloneive_lcell_comb \I_RS232RX|start_bit~0 (
+// Equation(s):
+// \I_RS232RX|start_bit~0_combout  = (!\I_RS232RX|always3~5_combout  & ((\I_RS232RX|start_bit~q ) # ((\I_RS232RX|always3~2_combout  & \I_RS232RX|counter [3]))))
+
+	.dataa(\I_RS232RX|always3~2_combout ),
+	.datab(\I_RS232RX|counter [3]),
+	.datac(\I_RS232RX|start_bit~q ),
+	.datad(\I_RS232RX|always3~5_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|start_bit~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|start_bit~0 .lut_mask = 16'h00F8;
+defparam \I_RS232RX|start_bit~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X6_Y30_N5
+dffeas \I_RS232RX|start_bit (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|start_bit~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|State.READ~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|start_bit~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|start_bit .is_wysiwyg = "true";
+defparam \I_RS232RX|start_bit .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N30
+cycloneive_lcell_comb \I_RS232RX|Bit[0]~0 (
+// Equation(s):
+// \I_RS232RX|Bit[0]~0_combout  = (!\I_RS232RX|Bit [3] & (\I_RS232RX|start_bit~q  & \I_RS232RX|counter [3]))
+
+	.dataa(gnd),
+	.datab(\I_RS232RX|Bit [3]),
+	.datac(\I_RS232RX|start_bit~q ),
+	.datad(\I_RS232RX|counter [3]),
+	.cin(gnd),
+	.combout(\I_RS232RX|Bit[0]~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|Bit[0]~0 .lut_mask = 16'h3000;
+defparam \I_RS232RX|Bit[0]~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N0
+cycloneive_lcell_comb \I_RS232RX|Bit[0]~1 (
+// Equation(s):
+// \I_RS232RX|Bit[0]~1_combout  = (\I_RS232RX|State.READ~q  & ((\I_RS232RX|always3~5_combout ) # ((\I_RS232RX|always3~0_combout  & \I_RS232RX|Bit[0]~0_combout ))))
+
+	.dataa(\I_RS232RX|State.READ~q ),
+	.datab(\I_RS232RX|always3~0_combout ),
+	.datac(\I_RS232RX|Bit[0]~0_combout ),
+	.datad(\I_RS232RX|always3~5_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|Bit[0]~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|Bit[0]~1 .lut_mask = 16'hAA80;
+defparam \I_RS232RX|Bit[0]~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N10
+cycloneive_lcell_comb \I_RS232RX|Bit[0]~3 (
+// Equation(s):
+// \I_RS232RX|Bit[0]~3_combout  = (\I_RS232RX|Bit[0]~1_combout  & (!\I_RS232RX|always3~5_combout  & (\I_RS232RX|Add1~0_combout ))) # (!\I_RS232RX|Bit[0]~1_combout  & (((\I_RS232RX|Bit [0]))))
+
+	.dataa(\I_RS232RX|always3~5_combout ),
+	.datab(\I_RS232RX|Add1~0_combout ),
+	.datac(\I_RS232RX|Bit [0]),
+	.datad(\I_RS232RX|Bit[0]~1_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|Bit[0]~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|Bit[0]~3 .lut_mask = 16'h44F0;
+defparam \I_RS232RX|Bit[0]~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X7_Y30_N11
+dffeas \I_RS232RX|Bit[0] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|Bit[0]~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Bit [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Bit[0] .is_wysiwyg = "true";
+defparam \I_RS232RX|Bit[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N14
+cycloneive_lcell_comb \I_RS232RX|Add1~2 (
+// Equation(s):
+// \I_RS232RX|Add1~2_combout  = (\I_RS232RX|Bit [1] & (!\I_RS232RX|Add1~1 )) # (!\I_RS232RX|Bit [1] & ((\I_RS232RX|Add1~1 ) # (GND)))
+// \I_RS232RX|Add1~3  = CARRY((!\I_RS232RX|Add1~1 ) # (!\I_RS232RX|Bit [1]))
+
+	.dataa(gnd),
+	.datab(\I_RS232RX|Bit [1]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_RS232RX|Add1~1 ),
+	.combout(\I_RS232RX|Add1~2_combout ),
+	.cout(\I_RS232RX|Add1~3 ));
+// synopsys translate_off
+defparam \I_RS232RX|Add1~2 .lut_mask = 16'h3C3F;
+defparam \I_RS232RX|Add1~2 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X7_Y30_N15
+dffeas \I_RS232RX|Bit[1] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|Add1~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|Bit[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Bit [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Bit[1] .is_wysiwyg = "true";
+defparam \I_RS232RX|Bit[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N16
+cycloneive_lcell_comb \I_RS232RX|Add1~4 (
+// Equation(s):
+// \I_RS232RX|Add1~4_combout  = (\I_RS232RX|Bit [2] & (\I_RS232RX|Add1~3  $ (GND))) # (!\I_RS232RX|Bit [2] & (!\I_RS232RX|Add1~3  & VCC))
+// \I_RS232RX|Add1~5  = CARRY((\I_RS232RX|Bit [2] & !\I_RS232RX|Add1~3 ))
+
+	.dataa(gnd),
+	.datab(\I_RS232RX|Bit [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_RS232RX|Add1~3 ),
+	.combout(\I_RS232RX|Add1~4_combout ),
+	.cout(\I_RS232RX|Add1~5 ));
+// synopsys translate_off
+defparam \I_RS232RX|Add1~4 .lut_mask = 16'hC30C;
+defparam \I_RS232RX|Add1~4 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X7_Y30_N17
+dffeas \I_RS232RX|Bit[2] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|Add1~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|Bit[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Bit [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Bit[2] .is_wysiwyg = "true";
+defparam \I_RS232RX|Bit[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N18
+cycloneive_lcell_comb \I_RS232RX|Add1~6 (
+// Equation(s):
+// \I_RS232RX|Add1~6_combout  = (\I_RS232RX|Bit [3] & (!\I_RS232RX|Add1~5 )) # (!\I_RS232RX|Bit [3] & ((\I_RS232RX|Add1~5 ) # (GND)))
+// \I_RS232RX|Add1~7  = CARRY((!\I_RS232RX|Add1~5 ) # (!\I_RS232RX|Bit [3]))
+
+	.dataa(gnd),
+	.datab(\I_RS232RX|Bit [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\I_RS232RX|Add1~5 ),
+	.combout(\I_RS232RX|Add1~6_combout ),
+	.cout(\I_RS232RX|Add1~7 ));
+// synopsys translate_off
+defparam \I_RS232RX|Add1~6 .lut_mask = 16'h3C3F;
+defparam \I_RS232RX|Add1~6 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N24
+cycloneive_lcell_comb \I_RS232RX|Bit[3]~2 (
+// Equation(s):
+// \I_RS232RX|Bit[3]~2_combout  = (\I_RS232RX|Bit[0]~1_combout  & (!\I_RS232RX|always3~5_combout  & (\I_RS232RX|Add1~6_combout ))) # (!\I_RS232RX|Bit[0]~1_combout  & (((\I_RS232RX|Bit [3]))))
+
+	.dataa(\I_RS232RX|always3~5_combout ),
+	.datab(\I_RS232RX|Add1~6_combout ),
+	.datac(\I_RS232RX|Bit [3]),
+	.datad(\I_RS232RX|Bit[0]~1_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|Bit[3]~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|Bit[3]~2 .lut_mask = 16'h44F0;
+defparam \I_RS232RX|Bit[3]~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X7_Y30_N25
+dffeas \I_RS232RX|Bit[3] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|Bit[3]~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Bit [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Bit[3] .is_wysiwyg = "true";
+defparam \I_RS232RX|Bit[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N28
+cycloneive_lcell_comb \I_RS232RX|always3~4 (
+// Equation(s):
+// \I_RS232RX|always3~4_combout  = (\Rx~input_o  & (!\I_RS232RX|Bit [2] & (!\I_RS232RX|Bit [1] & !\I_RS232RX|Bit [0])))
+
+	.dataa(\Rx~input_o ),
+	.datab(\I_RS232RX|Bit [2]),
+	.datac(\I_RS232RX|Bit [1]),
+	.datad(\I_RS232RX|Bit [0]),
+	.cin(gnd),
+	.combout(\I_RS232RX|always3~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|always3~4 .lut_mask = 16'h0002;
+defparam \I_RS232RX|always3~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N28
+cycloneive_lcell_comb \I_RS232RX|always3~5 (
+// Equation(s):
+// \I_RS232RX|always3~5_combout  = (\I_RS232RX|Bit [3] & (\I_RS232RX|counter [3] & (\I_RS232RX|always3~0_combout  & \I_RS232RX|always3~4_combout )))
+
+	.dataa(\I_RS232RX|Bit [3]),
+	.datab(\I_RS232RX|counter [3]),
+	.datac(\I_RS232RX|always3~0_combout ),
+	.datad(\I_RS232RX|always3~4_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|always3~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|always3~5 .lut_mask = 16'h8000;
+defparam \I_RS232RX|always3~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N2
+cycloneive_lcell_comb \I_RS232RX|RxDone~feeder (
+// Equation(s):
+// \I_RS232RX|RxDone~feeder_combout  = \I_RS232RX|always3~5_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|always3~5_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|RxDone~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|RxDone~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|RxDone~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X6_Y30_N3
+dffeas \I_RS232RX|RxDone (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|RxDone~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|State.READ~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|RxDone~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|RxDone .is_wysiwyg = "true";
+defparam \I_RS232RX|RxDone .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N12
+cycloneive_lcell_comb \I_RS232RX|Next.READ~0 (
+// Equation(s):
+// \I_RS232RX|Next.READ~0_combout  = (\I_RS232RX|State.READ~q  & ((!\I_RS232RX|RxDone~q ))) # (!\I_RS232RX|State.READ~q  & (!\Rx~input_o ))
+
+	.dataa(gnd),
+	.datab(\Rx~input_o ),
+	.datac(\I_RS232RX|State.READ~q ),
+	.datad(\I_RS232RX|RxDone~q ),
+	.cin(gnd),
+	.combout(\I_RS232RX|Next.READ~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|Next.READ~0 .lut_mask = 16'h03F3;
+defparam \I_RS232RX|Next.READ~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N8
+cycloneive_lcell_comb \I_RS232RX|State.READ~feeder (
+// Equation(s):
+// \I_RS232RX|State.READ~feeder_combout  = \I_RS232RX|Next.READ~0_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Next.READ~0_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|State.READ~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|State.READ~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|State.READ~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X6_Y30_N9
+dffeas \I_RS232RX|State.READ (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232RX|State.READ~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\Rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|State.READ~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|State.READ .is_wysiwyg = "true";
+defparam \I_RS232RX|State.READ .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X6_Y30_N25
+dffeas \I_RS232RX|counter[1] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|counter~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|State.READ~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|counter [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|counter[1] .is_wysiwyg = "true";
+defparam \I_RS232RX|counter[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N16
+cycloneive_lcell_comb \I_RS232RX|counter~2 (
+// Equation(s):
+// \I_RS232RX|counter~2_combout  = (\I_RS232RX|counter~0_combout  & (\I_RS232RX|counter [2] $ (((\I_RS232RX|counter [0] & \I_RS232RX|counter [1])))))
+
+	.dataa(\I_RS232RX|counter [0]),
+	.datab(\I_RS232RX|counter [1]),
+	.datac(\I_RS232RX|counter [2]),
+	.datad(\I_RS232RX|counter~0_combout ),
+	.cin(gnd),
+	.combout(\I_RS232RX|counter~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|counter~2 .lut_mask = 16'h7800;
+defparam \I_RS232RX|counter~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X6_Y30_N17
+dffeas \I_RS232RX|counter[2] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|counter~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|State.READ~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|counter [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|counter[2] .is_wysiwyg = "true";
+defparam \I_RS232RX|counter[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N20
+cycloneive_lcell_comb \I_RS232RX|always3~2 (
+// Equation(s):
+// \I_RS232RX|always3~2_combout  = (!\I_RS232RX|counter [0] & (!\I_RS232RX|counter [2] & (!\I_RS232RX|start_bit~q  & !\I_RS232RX|counter [1])))
+
+	.dataa(\I_RS232RX|counter [0]),
+	.datab(\I_RS232RX|counter [2]),
+	.datac(\I_RS232RX|start_bit~q ),
+	.datad(\I_RS232RX|counter [1]),
+	.cin(gnd),
+	.combout(\I_RS232RX|always3~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|always3~2 .lut_mask = 16'h0001;
+defparam \I_RS232RX|always3~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N10
+cycloneive_lcell_comb \I_RS232RX|counter~3 (
+// Equation(s):
+// \I_RS232RX|counter~3_combout  = (!\I_RS232RX|counter [0] & ((!\I_RS232RX|counter [3]) # (!\I_RS232RX|always3~2_combout )))
+
+	.dataa(\I_RS232RX|always3~2_combout ),
+	.datab(\I_RS232RX|counter [3]),
+	.datac(\I_RS232RX|counter [0]),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\I_RS232RX|counter~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|counter~3 .lut_mask = 16'h0707;
+defparam \I_RS232RX|counter~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X6_Y30_N11
+dffeas \I_RS232RX|counter[0] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|counter~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|State.READ~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|counter [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|counter[0] .is_wysiwyg = "true";
+defparam \I_RS232RX|counter[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y30_N20
+cycloneive_lcell_comb \I_RS232RX|Add1~8 (
+// Equation(s):
+// \I_RS232RX|Add1~8_combout  = \I_RS232RX|Add1~7  $ (!\I_RS232RX|Bit [4])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Bit [4]),
+	.cin(\I_RS232RX|Add1~7 ),
+	.combout(\I_RS232RX|Add1~8_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|Add1~8 .lut_mask = 16'hF00F;
+defparam \I_RS232RX|Add1~8 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X7_Y30_N21
+dffeas \I_RS232RX|Bit[4] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|Add1~8_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|Bit[0]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Bit [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Bit[4] .is_wysiwyg = "true";
+defparam \I_RS232RX|Bit[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N22
+cycloneive_lcell_comb \I_RS232RX|always3~0 (
+// Equation(s):
+// \I_RS232RX|always3~0_combout  = (\I_RS232RX|counter [0] & (\I_RS232RX|counter [2] & (!\I_RS232RX|Bit [4] & \I_RS232RX|counter [1])))
+
+	.dataa(\I_RS232RX|counter [0]),
+	.datab(\I_RS232RX|counter [2]),
+	.datac(\I_RS232RX|Bit [4]),
+	.datad(\I_RS232RX|counter [1]),
+	.cin(gnd),
+	.combout(\I_RS232RX|always3~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|always3~0 .lut_mask = 16'h0800;
+defparam \I_RS232RX|always3~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N30
+cycloneive_lcell_comb \I_RS232RX|always3~1 (
+// Equation(s):
+// \I_RS232RX|always3~1_combout  = (\I_RS232RX|start_bit~q  & !\I_RS232RX|Bit [3])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\I_RS232RX|start_bit~q ),
+	.datad(\I_RS232RX|Bit [3]),
+	.cin(gnd),
+	.combout(\I_RS232RX|always3~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|always3~1 .lut_mask = 16'h00F0;
+defparam \I_RS232RX|always3~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X6_Y30_N0
+cycloneive_lcell_comb \I_RS232RX|Read_data[0]~0 (
+// Equation(s):
+// \I_RS232RX|Read_data[0]~0_combout  = (\I_RS232RX|always3~0_combout  & (\I_RS232RX|counter [3] & (\I_RS232RX|always3~1_combout  & \I_RS232RX|State.READ~q )))
+
+	.dataa(\I_RS232RX|always3~0_combout ),
+	.datab(\I_RS232RX|counter [3]),
+	.datac(\I_RS232RX|always3~1_combout ),
+	.datad(\I_RS232RX|State.READ~q ),
+	.cin(gnd),
+	.combout(\I_RS232RX|Read_data[0]~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[0]~0 .lut_mask = 16'h8000;
+defparam \I_RS232RX|Read_data[0]~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N11
+dffeas \I_RS232RX|Read_data[7] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232RX|Read_data[7]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232RX|Read_data[0]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Read_data [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[7] .is_wysiwyg = "true";
+defparam \I_RS232RX|Read_data[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N21
+dffeas \I_RS232RX|Read_data[6] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(gnd),
+	.asdata(\I_RS232RX|Read_data [7]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\I_RS232RX|Read_data[0]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Read_data [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[6] .is_wysiwyg = "true";
+defparam \I_RS232RX|Read_data[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N7
+dffeas \I_RS232RX|Read_data[5] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(gnd),
+	.asdata(\I_RS232RX|Read_data [6]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\I_RS232RX|Read_data[0]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Read_data [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[5] .is_wysiwyg = "true";
+defparam \I_RS232RX|Read_data[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N25
+dffeas \I_RS232RX|Read_data[4] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(gnd),
+	.asdata(\I_RS232RX|Read_data [5]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\I_RS232RX|Read_data[0]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Read_data [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[4] .is_wysiwyg = "true";
+defparam \I_RS232RX|Read_data[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N19
+dffeas \I_RS232RX|Read_data[3] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(gnd),
+	.asdata(\I_RS232RX|Read_data [4]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\I_RS232RX|Read_data[0]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Read_data [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[3] .is_wysiwyg = "true";
+defparam \I_RS232RX|Read_data[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N13
+dffeas \I_RS232RX|Read_data[2] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(gnd),
+	.asdata(\I_RS232RX|Read_data [3]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\I_RS232RX|Read_data[0]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Read_data [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[2] .is_wysiwyg = "true";
+defparam \I_RS232RX|Read_data[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y30_N0
+cycloneive_lcell_comb \I_RS232RX|RxData[2]~feeder (
+// Equation(s):
+// \I_RS232RX|RxData[2]~feeder_combout  = \I_RS232RX|Read_data [2]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Read_data [2]),
+	.cin(gnd),
+	.combout(\I_RS232RX|RxData[2]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|RxData[2]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|RxData[2]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N1
+dffeas \I_RS232RX|RxData[2] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232RX|RxData[2]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|RxData [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|RxData[2] .is_wysiwyg = "true";
+defparam \I_RS232RX|RxData[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N20
+cycloneive_lcell_comb \I_RS232TX|in_data~2 (
+// Equation(s):
+// \I_RS232TX|in_data~2_combout  = (\I_RS232TX|Equal1~0_combout  & (((\I_RS232TX|LessThan0~0_combout  & !\I_RS232TX|LessThan0~1_combout )) # (!\I_RS232TX|start_bit~q )))
+
+	.dataa(\I_RS232TX|Equal1~0_combout ),
+	.datab(\I_RS232TX|start_bit~q ),
+	.datac(\I_RS232TX|LessThan0~0_combout ),
+	.datad(\I_RS232TX|LessThan0~1_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data~2 .lut_mask = 16'h22A2;
+defparam \I_RS232TX|in_data~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y30_N4
+cycloneive_lcell_comb \I_RS232RX|RxData[6]~feeder (
+// Equation(s):
+// \I_RS232RX|RxData[6]~feeder_combout  = \I_RS232RX|Read_data [6]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Read_data [6]),
+	.cin(gnd),
+	.combout(\I_RS232RX|RxData[6]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|RxData[6]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|RxData[6]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N5
+dffeas \I_RS232RX|RxData[6] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232RX|RxData[6]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|RxData [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|RxData[6] .is_wysiwyg = "true";
+defparam \I_RS232RX|RxData[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y30_N26
+cycloneive_lcell_comb \I_RS232RX|RxData[7]~feeder (
+// Equation(s):
+// \I_RS232RX|RxData[7]~feeder_combout  = \I_RS232RX|Read_data [7]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Read_data [7]),
+	.cin(gnd),
+	.combout(\I_RS232RX|RxData[7]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|RxData[7]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|RxData[7]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N27
+dffeas \I_RS232RX|RxData[7] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232RX|RxData[7]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|RxData [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|RxData[7] .is_wysiwyg = "true";
+defparam \I_RS232RX|RxData[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N6
+cycloneive_lcell_comb \I_RS232TX|always3~2 (
+// Equation(s):
+// \I_RS232TX|always3~2_combout  = (\I_RS232TX|start_bit~q ) # (\I_RS232TX|stop_bit~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\I_RS232TX|start_bit~q ),
+	.datad(\I_RS232TX|stop_bit~q ),
+	.cin(gnd),
+	.combout(\I_RS232TX|always3~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|always3~2 .lut_mask = 16'hFFF0;
+defparam \I_RS232TX|always3~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X4_Y31_N6
+cycloneive_lcell_comb \I_RS232TX|in_data~10 (
+// Equation(s):
+// \I_RS232TX|in_data~10_combout  = (!\I_RS232TX|in_data~2_combout  & ((\I_RS232TX|always3~2_combout  & ((\I_RS232TX|in_data [7]))) # (!\I_RS232TX|always3~2_combout  & (\I_RS232RX|RxData [7]))))
+
+	.dataa(\I_RS232RX|RxData [7]),
+	.datab(\I_RS232TX|always3~2_combout ),
+	.datac(\I_RS232TX|in_data [7]),
+	.datad(\I_RS232TX|in_data~2_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data~10_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data~10 .lut_mask = 16'h00E2;
+defparam \I_RS232TX|in_data~10 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X4_Y31_N7
+dffeas \I_RS232TX|in_data[7] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|in_data~10_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|State~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|in_data [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|in_data[7] .is_wysiwyg = "true";
+defparam \I_RS232TX|in_data[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N10
+cycloneive_lcell_comb \I_RS232TX|in_data~9 (
+// Equation(s):
+// \I_RS232TX|in_data~9_combout  = (\I_RS232TX|in_data~2_combout  & ((\I_RS232TX|in_data [7]))) # (!\I_RS232TX|in_data~2_combout  & (\I_RS232RX|RxData [6]))
+
+	.dataa(gnd),
+	.datab(\I_RS232RX|RxData [6]),
+	.datac(\I_RS232TX|in_data [7]),
+	.datad(\I_RS232TX|in_data~2_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data~9_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data~9 .lut_mask = 16'hF0CC;
+defparam \I_RS232TX|in_data~9 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N12
+cycloneive_lcell_comb \I_RS232TX|in_data[0]~11 (
+// Equation(s):
+// \I_RS232TX|in_data[0]~11_combout  = (\I_RS232TX|State~q  & ((\I_RS232TX|in_data~2_combout ) # ((!\I_RS232TX|start_bit~q  & !\I_RS232TX|stop_bit~q ))))
+
+	.dataa(\I_RS232TX|start_bit~q ),
+	.datab(\I_RS232TX|stop_bit~q ),
+	.datac(\I_RS232TX|State~q ),
+	.datad(\I_RS232TX|in_data~2_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data[0]~11_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data[0]~11 .lut_mask = 16'hF010;
+defparam \I_RS232TX|in_data[0]~11 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N11
+dffeas \I_RS232TX|in_data[6] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|in_data~9_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|in_data[0]~11_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|in_data [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|in_data[6] .is_wysiwyg = "true";
+defparam \I_RS232TX|in_data[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y30_N22
+cycloneive_lcell_comb \I_RS232RX|RxData[5]~feeder (
+// Equation(s):
+// \I_RS232RX|RxData[5]~feeder_combout  = \I_RS232RX|Read_data [5]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Read_data [5]),
+	.cin(gnd),
+	.combout(\I_RS232RX|RxData[5]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|RxData[5]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|RxData[5]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N23
+dffeas \I_RS232RX|RxData[5] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232RX|RxData[5]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|RxData [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|RxData[5] .is_wysiwyg = "true";
+defparam \I_RS232RX|RxData[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N20
+cycloneive_lcell_comb \I_RS232TX|in_data~8 (
+// Equation(s):
+// \I_RS232TX|in_data~8_combout  = (\I_RS232TX|in_data~2_combout  & (\I_RS232TX|in_data [6])) # (!\I_RS232TX|in_data~2_combout  & ((\I_RS232RX|RxData [5])))
+
+	.dataa(\I_RS232TX|in_data [6]),
+	.datab(gnd),
+	.datac(\I_RS232RX|RxData [5]),
+	.datad(\I_RS232TX|in_data~2_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data~8_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data~8 .lut_mask = 16'hAAF0;
+defparam \I_RS232TX|in_data~8 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N21
+dffeas \I_RS232TX|in_data[5] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|in_data~8_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|in_data[0]~11_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|in_data [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|in_data[5] .is_wysiwyg = "true";
+defparam \I_RS232TX|in_data[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y30_N16
+cycloneive_lcell_comb \I_RS232RX|RxData[4]~feeder (
+// Equation(s):
+// \I_RS232RX|RxData[4]~feeder_combout  = \I_RS232RX|Read_data [4]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Read_data [4]),
+	.cin(gnd),
+	.combout(\I_RS232RX|RxData[4]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|RxData[4]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|RxData[4]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N17
+dffeas \I_RS232RX|RxData[4] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232RX|RxData[4]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|RxData [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|RxData[4] .is_wysiwyg = "true";
+defparam \I_RS232RX|RxData[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N14
+cycloneive_lcell_comb \I_RS232TX|in_data~7 (
+// Equation(s):
+// \I_RS232TX|in_data~7_combout  = (\I_RS232TX|in_data~2_combout  & (\I_RS232TX|in_data [5])) # (!\I_RS232TX|in_data~2_combout  & ((\I_RS232RX|RxData [4])))
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|in_data [5]),
+	.datac(\I_RS232RX|RxData [4]),
+	.datad(\I_RS232TX|in_data~2_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data~7_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data~7 .lut_mask = 16'hCCF0;
+defparam \I_RS232TX|in_data~7 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N15
+dffeas \I_RS232TX|in_data[4] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|in_data~7_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|in_data[0]~11_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|in_data [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|in_data[4] .is_wysiwyg = "true";
+defparam \I_RS232TX|in_data[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y30_N30
+cycloneive_lcell_comb \I_RS232RX|RxData[3]~feeder (
+// Equation(s):
+// \I_RS232RX|RxData[3]~feeder_combout  = \I_RS232RX|Read_data [3]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Read_data [3]),
+	.cin(gnd),
+	.combout(\I_RS232RX|RxData[3]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|RxData[3]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|RxData[3]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N31
+dffeas \I_RS232RX|RxData[3] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232RX|RxData[3]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|RxData [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|RxData[3] .is_wysiwyg = "true";
+defparam \I_RS232RX|RxData[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N4
+cycloneive_lcell_comb \I_RS232TX|in_data~6 (
+// Equation(s):
+// \I_RS232TX|in_data~6_combout  = (\I_RS232TX|in_data~2_combout  & (\I_RS232TX|in_data [4])) # (!\I_RS232TX|in_data~2_combout  & ((\I_RS232RX|RxData [3])))
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|in_data~2_combout ),
+	.datac(\I_RS232TX|in_data [4]),
+	.datad(\I_RS232RX|RxData [3]),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data~6 .lut_mask = 16'hF3C0;
+defparam \I_RS232TX|in_data~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N5
+dffeas \I_RS232TX|in_data[3] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|in_data~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|in_data[0]~11_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|in_data [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|in_data[3] .is_wysiwyg = "true";
+defparam \I_RS232TX|in_data[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N30
+cycloneive_lcell_comb \I_RS232TX|in_data~5 (
+// Equation(s):
+// \I_RS232TX|in_data~5_combout  = (\I_RS232TX|in_data~2_combout  & ((\I_RS232TX|in_data [3]))) # (!\I_RS232TX|in_data~2_combout  & (\I_RS232RX|RxData [2]))
+
+	.dataa(gnd),
+	.datab(\I_RS232RX|RxData [2]),
+	.datac(\I_RS232TX|in_data [3]),
+	.datad(\I_RS232TX|in_data~2_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data~5 .lut_mask = 16'hF0CC;
+defparam \I_RS232TX|in_data~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N31
+dffeas \I_RS232TX|in_data[2] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|in_data~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|in_data[0]~11_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|in_data [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|in_data[2] .is_wysiwyg = "true";
+defparam \I_RS232TX|in_data[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N3
+dffeas \I_RS232RX|Read_data[1] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(gnd),
+	.asdata(\I_RS232RX|Read_data [2]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\I_RS232RX|Read_data[0]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Read_data [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[1] .is_wysiwyg = "true";
+defparam \I_RS232RX|Read_data[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y30_N14
+cycloneive_lcell_comb \I_RS232RX|RxData[1]~feeder (
+// Equation(s):
+// \I_RS232RX|RxData[1]~feeder_combout  = \I_RS232RX|Read_data [1]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Read_data [1]),
+	.cin(gnd),
+	.combout(\I_RS232RX|RxData[1]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|RxData[1]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|RxData[1]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N15
+dffeas \I_RS232RX|RxData[1] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232RX|RxData[1]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|RxData [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|RxData[1] .is_wysiwyg = "true";
+defparam \I_RS232RX|RxData[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N16
+cycloneive_lcell_comb \I_RS232TX|in_data~4 (
+// Equation(s):
+// \I_RS232TX|in_data~4_combout  = (\I_RS232TX|in_data~2_combout  & (\I_RS232TX|in_data [2])) # (!\I_RS232TX|in_data~2_combout  & ((\I_RS232RX|RxData [1])))
+
+	.dataa(\I_RS232TX|in_data [2]),
+	.datab(gnd),
+	.datac(\I_RS232RX|RxData [1]),
+	.datad(\I_RS232TX|in_data~2_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data~4 .lut_mask = 16'hAAF0;
+defparam \I_RS232TX|in_data~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N17
+dffeas \I_RS232TX|in_data[1] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|in_data~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|in_data[0]~11_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|in_data [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|in_data[1] .is_wysiwyg = "true";
+defparam \I_RS232TX|in_data[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N29
+dffeas \I_RS232RX|Read_data[0] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(gnd),
+	.asdata(\I_RS232RX|Read_data [1]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\I_RS232RX|Read_data[0]~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|Read_data [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|Read_data[0] .is_wysiwyg = "true";
+defparam \I_RS232RX|Read_data[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y30_N8
+cycloneive_lcell_comb \I_RS232RX|RxData[0]~feeder (
+// Equation(s):
+// \I_RS232RX|RxData[0]~feeder_combout  = \I_RS232RX|Read_data [0]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\I_RS232RX|Read_data [0]),
+	.cin(gnd),
+	.combout(\I_RS232RX|RxData[0]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232RX|RxData[0]~feeder .lut_mask = 16'hFF00;
+defparam \I_RS232RX|RxData[0]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y30_N9
+dffeas \I_RS232RX|RxData[0] (
+	.clk(\Clk~inputclkctrl_outclk ),
+	.d(\I_RS232RX|RxData[0]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232RX|RxData [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232RX|RxData[0] .is_wysiwyg = "true";
+defparam \I_RS232RX|RxData[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X5_Y31_N22
+cycloneive_lcell_comb \I_RS232TX|in_data~3 (
+// Equation(s):
+// \I_RS232TX|in_data~3_combout  = (\I_RS232TX|in_data~2_combout  & (\I_RS232TX|in_data [1])) # (!\I_RS232TX|in_data~2_combout  & ((\I_RS232RX|RxData [0])))
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|in_data [1]),
+	.datac(\I_RS232RX|RxData [0]),
+	.datad(\I_RS232TX|in_data~2_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|in_data~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|in_data~3 .lut_mask = 16'hCCF0;
+defparam \I_RS232TX|in_data~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X5_Y31_N23
+dffeas \I_RS232TX|in_data[0] (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|in_data~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|in_data[0]~11_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|in_data [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|in_data[0] .is_wysiwyg = "true";
+defparam \I_RS232TX|in_data[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N10
+cycloneive_lcell_comb \I_RS232TX|Tx~0 (
+// Equation(s):
+// \I_RS232TX|Tx~0_combout  = (\I_RS232TX|in_data~2_combout  & (\I_RS232TX|in_data [0])) # (!\I_RS232TX|in_data~2_combout  & (((\I_RS232TX|Tx~q  & \I_RS232TX|always3~2_combout ))))
+
+	.dataa(\I_RS232TX|in_data [0]),
+	.datab(\I_RS232TX|Tx~q ),
+	.datac(\I_RS232TX|in_data~2_combout ),
+	.datad(\I_RS232TX|always3~2_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|Tx~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|Tx~0 .lut_mask = 16'hACA0;
+defparam \I_RS232TX|Tx~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X3_Y31_N28
+cycloneive_lcell_comb \I_RS232TX|Tx~1 (
+// Equation(s):
+// \I_RS232TX|Tx~1_combout  = (\I_RS232TX|Tx~0_combout ) # ((!\I_RS232TX|stop_bit~q  & \I_RS232TX|always3~5_combout ))
+
+	.dataa(gnd),
+	.datab(\I_RS232TX|stop_bit~q ),
+	.datac(\I_RS232TX|always3~5_combout ),
+	.datad(\I_RS232TX|Tx~0_combout ),
+	.cin(gnd),
+	.combout(\I_RS232TX|Tx~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \I_RS232TX|Tx~1 .lut_mask = 16'hFF30;
+defparam \I_RS232TX|Tx~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X3_Y31_N29
+dffeas \I_RS232TX|Tx (
+	.clk(\I_BAUDGEN|Equal0~clkctrl_outclk ),
+	.d(\I_RS232TX|Tx~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\I_RS232TX|State~q ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\I_RS232TX|Tx~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \I_RS232TX|Tx .is_wysiwyg = "true";
+defparam \I_RS232TX|Tx .power_up = "low";
+// synopsys translate_on
+
+assign Tx = \Tx~output_o ;
+
+assign RxData[0] = \RxData[0]~output_o ;
+
+assign RxData[1] = \RxData[1]~output_o ;
+
+assign RxData[2] = \RxData[2]~output_o ;
+
+assign RxData[3] = \RxData[3]~output_o ;
+
+assign RxData[4] = \RxData[4]~output_o ;
+
+assign RxData[5] = \RxData[5]~output_o ;
+
+assign RxData[6] = \RxData[6]~output_o ;
+
+assign RxData[7] = \RxData[7]~output_o ;
+
+endmodule
+
+module hard_block (
+
+	devpor,
+	devclrn,
+	devoe);
+
+// Design Ports Information
+// ~ALTERA_ASDO_DATA1~	=>  Location: PIN_C1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_FLASH_nCE_nCSO~	=>  Location: PIN_D2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DCLK~	=>  Location: PIN_H1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DATA0~	=>  Location: PIN_H2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_nCEO~	=>  Location: PIN_F16,	 I/O Standard: 2.5 V,	 Current Strength: 8mA
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \~ALTERA_ASDO_DATA1~~padout ;
+wire \~ALTERA_FLASH_nCE_nCSO~~padout ;
+wire \~ALTERA_DATA0~~padout ;
+wire \~ALTERA_ASDO_DATA1~~ibuf_o ;
+wire \~ALTERA_FLASH_nCE_nCSO~~ibuf_o ;
+wire \~ALTERA_DATA0~~ibuf_o ;
+
+
+endmodule

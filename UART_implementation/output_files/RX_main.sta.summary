@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'Clk'
+Slack : -2.982
+TNS   : -52.226
+
+Type  : Slow 1200mV 85C Model Setup 'UART_BaudRate_generator:I_BAUDGEN|baudRateReg[0]'
+Slack : -2.005
+TNS   : -57.686
+
+Type  : Slow 1200mV 85C Model Hold 'UART_BaudRate_generator:I_BAUDGEN|baudRateReg[0]'
+Slack : 0.027
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Clk'
+Slack : 0.371
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clk'
+Slack : -3.000
+TNS   : -31.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UART_BaudRate_generator:I_BAUDGEN|baudRateReg[0]'
+Slack : -1.000
+TNS   : -40.000
+
+Type  : Slow 1200mV 0C Model Setup 'Clk'
+Slack : -2.558
+TNS   : -45.141
+
+Type  : Slow 1200mV 0C Model Setup 'UART_BaudRate_generator:I_BAUDGEN|baudRateReg[0]'
+Slack : -1.700
+TNS   : -47.912
+
+Type  : Slow 1200mV 0C Model Hold 'UART_BaudRate_generator:I_BAUDGEN|baudRateReg[0]'
+Slack : 0.086
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Clk'
+Slack : 0.330
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clk'
+Slack : -3.000
+TNS   : -31.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UART_BaudRate_generator:I_BAUDGEN|baudRateReg[0]'
+Slack : -1.000
+TNS   : -40.000
+
+Type  : Fast 1200mV 0C Model Setup 'Clk'
+Slack : -1.318
+TNS   : -20.716
+
+Type  : Fast 1200mV 0C Model Setup 'UART_BaudRate_generator:I_BAUDGEN|baudRateReg[0]'
+Slack : -0.688
+TNS   : -16.172
+
+Type  : Fast 1200mV 0C Model Hold 'UART_BaudRate_generator:I_BAUDGEN|baudRateReg[0]'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Clk'
+Slack : 0.197
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clk'
+Slack : -3.000
+TNS   : -32.348
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UART_BaudRate_generator:I_BAUDGEN|baudRateReg[0]'
+Slack : -1.000
+TNS   : -40.000
+
+------------------------------------------------------------
